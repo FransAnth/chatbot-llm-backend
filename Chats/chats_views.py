@@ -1,3 +1,5 @@
+import json
+
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -34,7 +36,7 @@ class Chats(APIView):
     def post(self, request):
 
         data_util = DataStructureUtils()
-        chat_data = data_util.json_to_dict(request.data.copy())
+        chat_data = data_util.json_to_dict(json.loads(request.body))
 
         print(f"CHAT DATAAA {chat_data}")
 
