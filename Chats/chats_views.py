@@ -77,13 +77,32 @@ class ChatConfig(APIView):
 
     def post(self, request):
         data_util = DataStructureUtils()
-        config_data = data_util.json_to_dict(request.data.copy())
+        request_data = json.loads(request.body)
+        config_data = data_util.json_to_dict(request_data)
 
-        serializer = ChatConfigurationSerializer(data=config_data)
+        user_id = request_data.get("userId")
 
-        if serializer.is_valid():
-            serializer.save()
+        try:
+            # Checking if config exists
+            user = ChatConfiguration.objects.get(user_id=user_id)
 
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            serializer = ChatConfigurationSerializer(
+                user, data=config_data, partial=True
+            )
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            if serializer.is_valid():
+                serializer.save()
+
+                return Response(serializer.data, status=status.HTTP_200_OK)
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        except ChatConfiguration.DoesNotExist:
+            serializer = ChatConfigurationSerializer(data=config_data)
+
+            if serializer.is_valid():
+                serializer.save()
+
+                return Response(serializer.data, status=status.HTTP_200_OK)
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

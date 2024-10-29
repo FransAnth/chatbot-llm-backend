@@ -11,6 +11,6 @@ class ChatConversation(models.Model):
 
 class ChatConfiguration(models.Model):
     id = models.IntegerField(primary_key=True)
-    user_id = models.TextField(max_length=200)
+    user_id = models.TextField(max_length=200, unique=True)
     instruction = models.TextField()
     model_type = models.TextField(max_length=200)

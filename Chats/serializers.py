@@ -21,4 +21,4 @@ class ChatConfigurationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ChatConfiguration
-        fields = "__all__"
+        fields = ["user_id", "instruction", "model_type"]
