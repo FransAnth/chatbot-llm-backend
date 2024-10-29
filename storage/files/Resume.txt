@@ -1,0 +1,68 @@
+﻿Zone 4, Highway 1, San Nicolas
+IRIGA CITY, CAMARINES SUR
+(+63) 9387899520
+deguzmanfrancis22@gmail.com
+linkedin.com/in/fadeguzman
+FRANCIS ANTHONY B. DE GUZMAN A long, thin rectangle to divide sections of the document 
+EXPERIENCE
+Monad Solutions Inc., Paco, Manila City — Consultant
+MAY 2023 - PRESENT 
+* Developed Front-end web applications for Content Management Systems. 
+* Created a responsive landing page using React ts and Tailwind CSS.
+
+Shiptek Solutions Corp. (XLOG), San Pedro, Laguna — System Developer
+SEPTEMBER 2021 - MAY 2023 (1 year and 9 months)
+   * Developed content managing systems for the digitalization of logistics transactions using Angular and Outsystems.  
+   * Strong experience in using version control systems like GIT.
+   * Involved in different discussions related to the use of machine learning in the company's future projects.
+   * Created web application using React JS that can manage and monitor the transaction of Container Insurance Companies.
+   * Strong knowledge in working with HTML, CSS, and Tailwind CSS.
+   * Developed a strong knowledge in working with APIs.
+EDUCATION
+Camarines Sur Polytechnic Colleges, Nabua Camarines Sur — Bachelor of Science in Electrical Engineering 
+JUNE 2016 - AUGUST 2021
+   * Developed a strong understanding in the principles of Machine Learning.
+   * Strong understanding with many Fundamental Principles of Mathematics.
+   * CSPC Programming Varsity Team member.
+   * Involved in different programming challenge trainings.
+   * Vice-Governor of the College of Engineering Departmental Organization.
+PROJECTS
+Filipino Sign Language to Voice Converter — Thesis Project
+   * Created Gloves that interprets Filipino sign language and translates it into voice.
+   * Developed a fundamental understanding in Machine Learning principles and application. 
+   * Experienced different python libraries for machine learning development such as scikit-learn, pandas, and numpy.
+   * Developed a strong knowledge in real time programming and object oriented programming with python.
+
+
+Illumination Calculator — Project
+   * Created a Python-based graphical user interface (GUI) for determining the required illumination in a building. 
+AWARDS
+1st Place - 2021 Gawad Likha CSPCeans, CSPC’s Award of Excellence for Student Researchers and Innovators. 
+2nd Place - Sibol Award for Outstanding College Student Creative Research in the 2021 Regional Contest and Exhibition in Bicol Region.
+SPEAKING ENGAGEMENTS
+3rd USTSHS STEM Capstone Lecture Series -  University of Santo Tomas
+October 12, 2021 - Zoom Webinar
+   * Discussed how our research entitled Filipino Sign Language to Voice Converter works and how we used machine learning to make the computer understand the data gathered from the hand gestures.  
+Young Engineers and Scientists Summit - Meralco Power Academy
+November 18, 2021 - Zoom Webinar
+   * Shared our team's journey in creating our thesis project and how we overcame the challenges we faced amidst the unexpected pandemic.
+Natural Language Processing: The New Era in Technology - Bicol University
+March 18, 2022 - Zoom Webinar
+   * Discussed about machine learning and how it can be used to create meaningful projects and help solve the different problems we face today. 
+Joint International Research Presentations in Engineering -  Camarines Sur Polytechnic Colleges
+March 30, 2022 - Zoom Webinar
+   * Led my team in presenting our research entitled Filipino Sign Language to Voice Converter to the students and faculty members of the Politeknik Negeri Padang in Indonesia via zoom. 
+SEMINARS
+Patent Search and Drafting Workshop -  Camarines Sur Polytechnic Colleges
+July 26-28, 2021 - Zoom Webinar
+   * Learned how to use different search tools and strategies for patent searching. 
+   * Drafted a patent application for our research project entitled Filipino Sign Language to Voice Converter. 
+SKILL
+        Frontend Web Development
+React and Angular
+HTML and CSS
+Tailwind CSS
+Python Programming
+Machine Learning with Scikit Learn
+Deep Learning with TensorFlow
+GIT

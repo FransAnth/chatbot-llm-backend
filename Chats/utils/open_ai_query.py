@@ -1,9 +1,9 @@
 import os
 
 from dotenv import load_dotenv
-from langchain import PromptTemplate
 from langchain.chains import LLMChain
-from langchain.chat_models import ChatOpenAI
+from langchain.prompts import PromptTemplate
+from langchain_community.chat_models import ChatOpenAI
 
 load_dotenv()
 
@@ -21,7 +21,7 @@ class OpenAiQuery:
             template="Answer the user question in a friendly way : Question {question}",
         )
 
-        openai_model_name = "gpt-3.5-turbo-0613"
+        openai_model_name = "gpt-4o-mini"
         llm = ChatOpenAI(model=openai_model_name, openai_api_key=self.key)
         chain = LLMChain(llm=llm, verbose=True, prompt=prompt)
 
