@@ -15,8 +15,9 @@
 
 import math
 import re
-from typing import TYPE_CHECKING, Dict
+from typing import TYPE_CHECKING, Dict, Union
 
+from .. import constants
 from ._base import MAX_SHARD_SIZE, StateDictSplit, split_state_dict_into_shards_factory
 
 
@@ -27,8 +28,8 @@ if TYPE_CHECKING:
 def split_tf_state_dict_into_shards(
     state_dict: Dict[str, "tf.Tensor"],
     *,
-    filename_pattern: str = "tf_model{suffix}.h5",
-    max_shard_size: int = MAX_SHARD_SIZE,
+    filename_pattern: str = constants.TF2_WEIGHTS_FILE_PATTERN,
+    max_shard_size: Union[int, str] = MAX_SHARD_SIZE,
 ) -> StateDictSplit:
     """
     Split a model state dictionary in shards so that each shard is smaller than a given size.
@@ -62,11 +63,11 @@ def split_tf_state_dict_into_shards(
         state_dict,
         max_shard_size=max_shard_size,
         filename_pattern=filename_pattern,
-        get_tensor_size=get_tensor_size,
+        get_storage_size=get_tf_storage_size,
     )
 
 
-def get_tensor_size(tensor: "tf.Tensor") -> int:
+def get_tf_storage_size(tensor: "tf.Tensor") -> int:
     # Return `math.ceil` since dtype byte size can be a float (e.g., 0.125 for tf.bool).
     # Better to overestimate than underestimate.
     return math.ceil(tensor.numpy().size * _dtype_byte_size_tf(tensor.dtype))
