@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain_chroma import Chroma
-from langchain_openai import ChatOpenAI
-from langchain_openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 from ..static.prompts import chat_prompt
 from .chat_view_utils import ChatUtils
@@ -30,9 +29,7 @@ class OpenAiQuery:
             prompt=chat_prompt, chat_history=chat_history, instruction=self.instruction
         )
         prompt = PromptTemplate(
-            input_variables=["question"],
-            template=template,
-            template_format="jinja2"
+            input_variables=["question"], template=template, template_format="jinja2"
         )
 
         llm = ChatOpenAI(model=self.model_type, openai_api_key=self.key)
@@ -45,7 +42,7 @@ class OpenAiQuery:
         )
 
         chain = RetrievalQA.from_chain_type(
-            chain_type_kwargs={ "verbose": True, "prompt": prompt},
+            chain_type_kwargs={"verbose": True, "prompt": prompt},
             retriever=vectorstore.as_retriever(),
             chain_type="stuff",
             return_source_documents=True,

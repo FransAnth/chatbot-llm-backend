@@ -30,7 +30,8 @@ with you don't know the answer for the user's question.
 {{context}}
 
 You are now ready to answer the user's question using the information
-that you have. 
+that you have. Remember to always answer in a MARKDOWN format a do your
+best to make the MARKDOWN beautiful
 
 User's Question:
 {{question}}

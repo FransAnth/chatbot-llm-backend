@@ -140,9 +140,15 @@ class ChatConfig(APIView):
             if serializer.is_valid():
                 serializer.save()
 
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                response_data = serializer.data
+                response_data["message"] = "Chat configurations successfully updated!"
 
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response(response_data, status=status.HTTP_200_OK)
+
+            error_response = serializer.errors
+            error_response["message"] = "Opps, there has been an error saving your data"
+
+            return Response(error_response, status=status.HTTP_400_BAD_REQUEST)
 
         except ChatConfiguration.DoesNotExist:
             serializer = ChatConfigurationSerializer(data=config_data)
@@ -150,6 +156,12 @@ class ChatConfig(APIView):
             if serializer.is_valid():
                 serializer.save()
 
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                response_data = serializer.data
+                response_data["message"] = "Chat configurations successfully updated!"
 
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response(response_data, status=status.HTTP_200_OK)
+
+            error_response = serializer.errors
+            error_response["message"] = "Opps, there has been an error saving your data"
+
+            return Response(error_response, status=status.HTTP_400_BAD_REQUEST)
