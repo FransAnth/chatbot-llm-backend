@@ -27,17 +27,21 @@ To set up the backend locally, follow these steps:
    cd chatbot-llm-backend
 
 2. Create a virtual environment and activate it:
+   ```bash
    python -m venv venv
    source venv\Scripts\activate
 
-3. Install the dependencies
+4. Install the dependencies
+   ```bash
    pip install -r requirements.txt
    
-5. Configure the database and environment variables
+6. Configure the database and environment variables
    Update the .env file with necessary configurations (e.g., database credentials, API keys, etc.).
    
-7. Run Migrations
+9. Run Migrations
+   ```bash
    python manage.py migrate
    
-9. Start the development server
-   python manage.py runserver
+11. Start the development server
+    ```bash
+    python manage.py runserver
