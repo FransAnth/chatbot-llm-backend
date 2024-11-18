@@ -35,7 +35,8 @@ To set up the backend locally, follow these steps:
    ```bash
    pip install -r requirements.txt
    
-6. Configure the database and environment variables
+6. Configure the database and environment variables.
+
    Update the .env file with necessary configurations (e.g., database credentials, API keys, etc.).
    
 9. Run Migrations
