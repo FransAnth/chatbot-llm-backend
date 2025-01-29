@@ -55,9 +55,18 @@ class Chats(APIView):
             open_ai = OpenAiQuery(
                 model_type=chat_config.model_type, instruction=chat_config.instruction
             )
-            answer = open_ai.chat(
+            answer = open_ai.chat_retrieval(
                 question=chat_data["question"], chat_history=chat_history
             )
+
+            # open_ai = OpenAiQuery(
+            #     model_type="deepseek-r1",
+            #     instruction=chat_config.instruction,
+            #     llm="ollama",
+            # )
+            # answer, think_content, processing_time = open_ai.chat(
+            #     question=chat_data["question"], chat_history=chat_history
+            # )
 
             # Saving the chat history
             self.chat_utils.save_chat_history(
@@ -66,7 +75,21 @@ class Chats(APIView):
                 answer=answer,
             )
 
-            return Response({"answer": answer, "question": chat_data["question"]})
+            return Response(
+                {
+                    "answer": answer,
+                    "question": chat_data["question"],
+                }
+            )
+
+            # return Response(
+            #     {
+            #         "answer": answer,
+            #         "question": chat_data["question"],
+            #         "observation": think_content,
+            #         "processingTime": processing_time,
+            #     }
+            # )
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
